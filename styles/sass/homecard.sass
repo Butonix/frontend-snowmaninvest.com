@@ -1,0 +1,177 @@
+$primary-blue: #1DA1F2
+$primary-grey: #535353
+$white-grey: #EEEEEE
+$secondary-grey: #696969
+
+.homeCard
+    padding: 2rem 0
+    height: 20vw
+
+    & .homeCard-top
+        & h3
+            font-size: 1.75rem
+            line-height: 2.5rem
+
+    & .height-limiter
+        min-height: 25rem
+
+    & .homeCard-Big
+        max-width: 25rem
+        height: 25rem
+        
+        & .homeCard-Big_item
+            cursor: pointer
+            height: 50%
+            width: 100%
+            position: relative
+            margin-bottom: 1rem
+
+            &:hover
+                & img
+                    filter: brightness(30%)
+                    transition: 0.5s ease all
+
+            &:hover
+                & .fas
+                    visibility: visible
+                    opacity: 1
+
+            &:hover
+                & .bigcard-details
+                    text-shadow:  0px 0px 10px black
+
+            & .bigcard-details
+                position: absolute
+                bottom: 10%
+                left: 5%
+                right: 5%
+                
+                & h4
+                    font-size: 1.2em
+                & p 
+                    font-size: 0.65em
+
+            & img
+                filter: brightness(70%)
+                object-fit: cover
+                width: 100%
+                height: 100%
+            
+            & .fas
+                position: absolute
+                right: 5%
+                bottom: 5%
+                color: white
+                visibility: hidden
+                opacity: 0
+                font-size: 1em !important
+                transition: 0.8s ease all
+        
+
+    & .homeCard-Small
+        padding-left: 3%
+        width: 100%
+        
+        & .homeCard-Small__item
+            margin-bottom: 0.65rem
+            cursor: pointer
+            box-shadow: 0px 0px 10px #e4e4e4
+            transition: all ease 0.25s
+            border-radius: 0.25rem
+
+            &:hover
+                box-shadow: 0px 0px 30px #c7c7c7
+            
+            &:hover .content h5
+                color: $primary-blue
+            
+            & .date
+                min-width: 4rem
+                font-size: 0.5rem
+                text-align: left
+                font-weight: 500
+                color: $secondary-grey
+                padding-left: 1rem
+
+            & .image
+                width: 6rem 
+                height: 6rem
+                margin-right: 1rem
+                
+                & img
+                    object-fit: cover
+                    min-height: 6rem
+                    min-width: 6rem
+
+            & .content
+                margin: 1rem
+                min-width: 10rem
+                width: 100%
+                
+
+                & h5
+                    font-size: 1.25rem
+                    font-weight: 700
+                    color: $primary-grey
+                    transition: all 0.25s ease
+
+                & p
+                    font-size: 0.75rem
+                    color: $secondary-grey
+
+@media only screen and ( max-width: 831px)
+    .height-limiter
+        display: block !important
+        height: none !important
+        
+        
+        & .homeCard-Big
+            display: flex
+            width: 100% !important
+            max-width: none 
+            height: 100% !important
+           
+
+            & .homeCard-Big_item
+                width: 50%
+                height: auto !important
+        
+        & .homeCard-Small
+            justify-content: space-around
+            padding: 0
+
+            & .homeCard-Small__item
+                box-shadow: 0px 0px 10px #e2e2e2
+                border-radius: 0.5rem
+                margin-bottom: 1rem
+                align-items: center
+                height: 8rem
+
+                &:hover
+                    box-shadow: 0px 0px 20px #a0a0a0
+
+                & .content
+                    order: 2
+                    width: 100%
+
+                    & h5
+                        font-size: 1.25rem
+
+                    & p
+                        font-size: 0.75rem
+
+                & .date
+                    order: 3
+                    display: none
+                
+                & .image
+                    order: 1
+                    height: 100%
+                    width: 40%
+
+                    & img
+                        border-radius: 0.5rem 0 0 0.5rem
+                        height: 100%
+                        width: 100%
+
+        

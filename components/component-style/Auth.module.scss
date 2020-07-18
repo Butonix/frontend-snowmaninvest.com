@@ -1,0 +1,223 @@
+$primary-blue:#1DA1F2;
+$padding-width:2rem;
+$box-shadow:  0px 0px 6px 0px #5353533f;
+
+.contentWrapper{
+    padding:3.5rem 2rem;
+    box-shadow: 0px 0px 6px 0px #00000011;
+    width: 27.5rem;
+    margin:2rem auto;
+    background:white;
+    box-shadow: 0px 0px 6px 0px #5353533f;
+    border-radius: 0.5rem;
+    text-align: center;
+    color: #535353;
+
+    h1{
+        margin: 0;
+        font-size: 2rem;
+        line-height: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .smallTitle{
+        text-align: left;
+        font-size: 0.7rem;
+        font-weight: bold;
+        margin-left: 1.5rem;
+    }
+
+    input{
+        width: 100%;
+        margin-top: 0.5rem;
+        height: 3rem;
+        border-radius: 2rem;
+        border: none;
+        background-color: #5353530f;
+        padding-left: 1.5rem;
+        font-size: 1rem;
+        color: #535353;
+        transition: background-color 0.5s ease;
+        margin-bottom: 1rem;
+
+        &:focus{
+            outline: 0;
+            background-color: white;
+            box-shadow: 0px 0px 6px 0px #5353533f;
+        }
+    }
+
+    .submitBtn{
+        color: white;
+        background-color:$primary-blue;
+        font-size: 1.5rem;
+        font-weight: bold;
+        transition: background-color 0.2s ease;
+        margin-top: 1rem;
+        margin-bottom: 0;
+        padding: 0;
+
+        &:hover{
+            background-color: black;
+            cursor: pointer;
+            box-shadow: $box-shadow;
+        }
+    }
+
+    .sectionBreak{
+        font-size: 0.8rem;
+        margin-top: 1rem;
+    }
+
+    .sectionBreakA{
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+        transition: background-color 0.5s ease;
+
+        
+        
+    }
+
+    .oAuthBtn{
+        background-color: #3C5899;
+        color: white;
+        border-radius: 2rem;
+        margin-top: 1rem;
+        height: 3rem;
+        width: 100%;
+        font-size: 1rem;
+        font-weight: bold;
+        line-height:1.5rem;
+        transition: background-color 0.5s ease;
+        display: flex;
+        padding:0.75rem 0;
+
+        &:hover{
+            background-color: black;
+        }
+
+        img{
+            width:1.5rem;
+            height: 1.5rem;
+        }
+
+        & .center{
+            display: flex;
+            margin: 0 auto;
+            p{
+                margin-left: 0.5rem;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .contentWrapper{
+        padding:2rem 2rem;
+        box-shadow: 0px 0px 6px 0px #00000011;
+        width: 25rem;
+        margin:2rem auto;
+        background:white;
+        box-shadow: 0px 0px 6px 0px #5353533f;
+        border-radius: 0.5rem;
+        text-align: center;
+        color: #535353;
+    
+        h1{
+            margin: 0;
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+    
+        .smallTitle{
+            text-align: left;
+            font-size: 0.6rem;
+            font-weight: bold;
+            margin-left: 1.5rem;
+        }
+    
+        input{
+            width: 100%;
+            margin-top: 0.5rem;
+            height: 2rem;
+            border-radius: 2rem;
+            border: none;
+            background-color: #5353530f;
+            padding-left: 1.5rem;
+            font-size: 0.75rem;
+            color: #535353;
+            transition: background-color 0.5s ease;
+            margin-bottom: 0.5rem;
+    
+            &:focus{
+                outline: 0;
+                background-color: white;
+                box-shadow: 0px 0px 6px 0px #5353533f;
+            }
+        }
+    
+        .submitBtn{
+            color: white;
+            background-color:$primary-blue;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.2s ease;
+            margin-top: 1rem;
+            margin-bottom: 0;
+            padding: 0;
+    
+            &:hover{
+                background-color: black;
+                cursor: pointer;
+                box-shadow: $box-shadow;
+            }
+        }
+    
+        .sectionBreak{
+            font-size: 0.8rem;
+            margin-top: 1rem;
+        }
+    
+        .sectionBreakA{
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            transition: background-color 0.5s ease;
+    
+            
+        }
+    
+        .oAuthBtn{
+            background-color: #3C5899;
+            color: white;
+            border-radius: 2rem;
+            margin-top: 1rem;
+            height: 2rem;
+            width: 100%;
+            font-size: 0.75rem;
+            font-weight: bold;
+            transition: background-color 0.5s ease;
+            display: flex;
+            padding:0.5rem 0;
+    
+            &:hover{
+                background-color: black;
+            }
+    
+            img{
+                width:1rem;
+                height: 1rem;
+            }
+    
+            & .center{
+                display: flex;
+                margin: 0 auto;
+                p{
+                    margin-left: 0.5rem;
+                    line-height: 1rem;
+                }
+            }
+        }
+    }
+}

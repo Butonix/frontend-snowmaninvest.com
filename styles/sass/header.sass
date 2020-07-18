@@ -1,0 +1,99 @@
+// Mobile Version
+.carousel-item
+    height: 25rem
+    position: relative
+    transition: all 0.25s ease
+    cursor: pointer
+
+    &:hover, &:focus, &:active
+        & img 
+            filter: brightness(40%)
+    
+    &:hover .title
+        text-shadow:  0px 0px 10px black
+    
+    & .title
+        position: absolute
+        bottom: 12%
+        line-height: 2.2rem
+        white-space: wrap
+        left: 0
+        padding: 0 5%
+        color: white
+        max-width:100%
+        transition: all ease 0.25s
+
+    & img
+        object-fit: cover
+        height: 100%
+        filter: brightness(60%)
+        transition: all 0.75s ease
+
+.control
+    bottom: 2rem
+    position: absolute
+    width: 2rem
+    left: 50%
+    transform: translateX(-50%)
+
+    & a i
+        font-size: 1rem !important
+        color: rgba( 255,255,255, 0.75)   !important
+
+// Desktop Version
+.heroDesktop
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+
+    & .heroDesktop__item
+        height: 25rem
+        position: relative
+        cursor: pointer
+        
+        &:hover img
+            filter: brightness(20%)
+            object-position: right
+
+        &:hover .fas
+            visibility: visible !important
+            opacity: 1 !important
+
+        &:hover .heroDesktop__details
+            text-shadow: 0px 0px 10px black
+
+        & img
+            object-fit: cover
+            object-position: center
+            height: 100%
+            width: 100%
+            filter: brightness( 70% )
+            transition: all ease 0.5s
+
+        & .heroDesktop__details
+            position: absolute
+            bottom: 0
+            color: white
+            padding: 10%
+            width: 100%
+            transition: all ease 0.25s
+
+            & h2
+                font-size: 1.5rem
+                line-height: 1.6rem
+            
+            & small
+                font-size: 0.5rem
+                line-height: 0.75rem
+            
+            & p
+                font-size: 0.75rem
+                line-height: 1.2rem
+                margin-top: 0.5rem
+
+            & .fas
+                visibility: hidden
+                opacity: 0
+                transition: all 1s ease
+                position: absolute
+                bottom: 5%
+                right: 5%

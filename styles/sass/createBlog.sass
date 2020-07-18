@@ -1,0 +1,69 @@
+$primary-blue: #1DA1F2
+    
+.editor-wrapper
+    max-width: 650px !important
+    margin: 0 auto !important
+
+.ce-toolbar__plus
+    left: -10% !important
+
+.title
+    font-size: 2rem
+    font-weight: 500
+
+.scrollable
+    height: 8rem
+    overflow-y: scroll
+
+    &::-webkit-scrollbar
+        width: 0.25em
+ 
+    &::-webkit-scrollbar-track
+        background: white
+        border-radius: 5rem
+
+    &::-webkit-scrollbar-thumb
+        background-color: grey
+        outline: 1px solid slategrey
+        border-radius: 5rem
+
+.cdx-list__item
+    list-style: unset
+
+.cdx-list--ordered
+    list-style: decimal !important
+
+.custom-file-label
+    
+    &:after
+        display: none
+
+.custom-file-input
+    cursor: pointer
+    
+.btn
+    font-size: 0.75rem
+    
+.btn-primary
+    background: white
+    color: $primary-blue
+    transition: background-color 0.5s ease
+    font-size: 0.75rem
+        
+    &:hover
+        background: $primary-blue
+        color: white
+
+// modal
+.modal-body
+    &::-webkit-scrollbar
+        width: 0.25em
+ 
+    &::-webkit-scrollbar-track
+        background: white
+        border-radius: 5rem
+
+    &::-webkit-scrollbar-thumb
+        background-color: grey
+        outline: 1px solid slategrey
+        border-radius: 5rem

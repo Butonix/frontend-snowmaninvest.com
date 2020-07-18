@@ -1,0 +1,234 @@
+@import navbar
+@import header
+@import homecard
+@import createBlog
+@import footer
+@import list
+@import viewblog
+
+$primary-blue: #1DA1F2
+$primary-grey: #535353
+$white-grey: #EEEEEE
+$secondary-grey: #696969
+
+html,body
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
+    line-height: 1rem
+    font-size: 12px
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+a
+    text-decoration: none !important
+    color: unset !important
+    
+    &:hover
+        text-decoration: none !important
+
+img
+    max-width: 100%
+    display: block
+
+li
+    list-style: none
+    margin: 0
+    padding: 0
+
+ul
+    margin: 0
+    padding: 0
+
+p
+    padding:0
+    margin:0
+
+.fw-1
+    font-weight: 100
+.fw-3
+    font-weight: 300
+.fw-4
+    font-weight: 400
+.fw-5
+    font-weight: 500
+.fw-7
+    font-weight: 700
+.fw-9
+    font-weight: 900
+
+.dis-none
+    display: none
+
+.dis-lg-block
+    display: block
+
+.dis-lg-grid
+    display: grid
+
+.dis-sm-block
+    display: none
+
+.d-relative
+    position: relative 
+
+.d-absolute
+    position: absolute 
+
+.d-inline-block
+    display: inline-block 
+
+// Flex
+.justify-space-between
+    justify-content: space-between
+
+.primary-blue
+    color: $primary-blue
+
+.bg-primary-blue
+    background: $primary-blue
+
+.btn-snowblue
+    background: $primary-blue
+    border: none
+    border-radius: 2rem
+    padding: 0em 1rem
+    margin: 0.25rem 0
+    color: white
+    height: 2em 
+    line-height: 1.5rem
+    font-size: 0.75rem
+    transition: background 0.25s ease
+
+    &:hover
+        background: white
+        color: $primary-blue
+        box-shadow: 0px 0px 25px $white-grey
+
+    &:focus
+        outline: none
+
+.btn-snowred
+    background: white
+    border: none
+    border-radius: 2rem
+    padding: 0em 1rem
+    margin: 0.25rem 0
+    color: #e92b2b
+    height: 2em
+    line-height: 2em
+    font-size: 0.75rem
+    box-shadow: 0px 0px 25px 2px $white-grey
+    transition: background 0.25s ease
+
+    &:hover
+        background: #e92b2b
+        color: white
+        box-shadow: 0px 0px 25px $white-grey
+
+    &:focus
+        outline: none
+
+.btn-snowgrey
+    background: white
+    border: none
+    border-radius: 2rem
+    padding: 0em 1rem
+    margin: 0.25rem 0
+    color: $primary-grey
+    height: 2em
+    line-height: 2em
+    font-size: 0.75rem
+    border: solid 1px $white-grey
+    transition: background 0.25s ease
+
+    &:hover
+        background: $primary-grey
+        color: white
+        box-shadow: 0px 0px 25px $white-grey
+
+    &:focus
+        outline: none
+
+.shadow-0
+    box-shadow: none !important
+
+    &:focus
+        box-shadow: none
+
+.text-grey
+    color: $primary-grey
+
+.text-s-grey
+    color: $secondary-grey
+
+.content-wrapper
+    width: 90%
+    margin: 0 auto
+    height: auto
+
+@media screen and ( max-height: 360px)
+    html,body
+        font-size: 15px
+    
+@media screen and ( max-height: 414px)
+    html,body
+        font-size: 16px
+  
+@media screen and ( min-width: 320px)
+    html,body
+        font-size: 12px
+
+@media screen and ( min-width: 414px)
+    html,body
+        font-size: 14px
+
+@media only screen and (min-width: 600px)
+  html,body
+    font-size: 18px
+
+@media only screen and (min-width: 768px)
+  html,body
+    font-size: 20px
+
+@media only screen and ( max-width: 831px)
+    .dis-none
+        display: flex !important
+
+    .dis-lg-block
+        display: none !important
+    
+    .dis-lg-grid
+        display: none !important
+
+    .dis-sm-block
+        display: block !important
+
+@media only screen and (min-width: 1024px)
+  html,body
+    font-size: 24px
+
+.error-container
+    position: fixed
+    bottom: 2rem
+    left: 2rem
+    z-index: 999
+    border-radius: 0.25rem
+    padding: 1em 2em
+    background: white
+    box-shadow: 0px 0px 10px 0px #a1a1a1
+    color: tomato
+    font-weight: 500
+
+    & i 
+        position: absolute
+        right: -0.5rem
+        top: -0.5em
+        font-size: 1.5em !important
+        background: white
+        border-radius: 50%
+        border: 2px solid white
+        box-shadow: 0px 0px 10px 0px $secondary-grey
+        cursor: pointer
+
