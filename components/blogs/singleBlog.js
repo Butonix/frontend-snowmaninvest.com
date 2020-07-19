@@ -43,14 +43,14 @@ const SingleBlog = ({slug, router}) => {
                 content={`${mdesc}`}
             />
             <link rel="canonical" href={`${DOMAIN}/${slugs}`} />
-            <meta property="og:title" content={`${title}`} />
+            <meta property="og:title" content={`${mtitle}`} />
             <meta
                 property="og:description"
                 content={`${mdesc}`}
             />
             <meta property="og:type" content="website" />
             <meta property="og:url" content={`${DOMAIN}/${slugs}`} />
-            <meta property="og:site_name" content={`${APP_NAME}`} />
+            <meta property="og:site_name" content={`${title}`} />
     
             <meta property="og:image" content={`${API}/blog/photo/${slugs}`} />
             <meta property="og:image:secure_url" content={`${API}/blog/photo/${slugs}`} />
