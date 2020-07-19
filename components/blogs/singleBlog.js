@@ -37,7 +37,7 @@ const SingleBlog = ({slug, router}) => {
     
     const head = () => (
         <Head>
-            <title>{`${title}`}</title>
+            <title>{`雪人投资`}</title>
             <meta
                 name="description"
                 content={`content="以文字的力量， 推崇智慧学习的方式， 教育更多人投资理财 以理财为基本，投资为策略，股票外汇知识为工具 达到财务自由!"`}
@@ -51,7 +51,7 @@ const SingleBlog = ({slug, router}) => {
             <meta property="og:type" content="website" />
             <meta property="og:url" content={`${DOMAIN}/${slugs}`} />
             <meta property="og:site_name" content={`${title}`} />
-    
+            
             <meta property="og:image" content={`${API}/blog/photo/${slugs}`} />
             <meta property="og:image:secure_url" content={`${API}/blog/photo/${slugs}`} />
             <meta property="og:image:type" content="image/jpg" />
