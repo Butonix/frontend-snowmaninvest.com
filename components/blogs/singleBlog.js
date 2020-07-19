@@ -1,12 +1,14 @@
 import { readSingleBlog } from '../../actions/blog';
 import { useEffect, useState } from 'react';
-import { API } from '../../config';
+import { DOMAIN, API, APP_NAME } from '../../config';
 import Output from 'editorjs-react-renderer';
 import DisqusThread from '../../components/blogs/DisqusThread';
 import { isAuth, getCookie } from '../../actions/auth';
 import { savePostBtnReq } from '../../actions/blog';
+import Head from 'next/head';
+import { withRouter } from 'next/router';
 
-const SingleBlog = ({slug}) => {
+const SingleBlog = ({slug, router}) => {
 
     let token = getCookie('token');
     const [ saveBtn, setSaveBtn ] = useState("");
@@ -33,6 +35,28 @@ const SingleBlog = ({slug}) => {
         initBlogData();
     }, [])
     
+    const head = () => (
+        <Head>
+            <title> {title} | {APP_NAME}</title>
+            <meta
+                name="description"
+                content="以文字的力量， 推崇智慧学习的方式， 教育更多人投资理财 以理财为基本，投资为策略，股票外汇知识为工具 达到财务自由!"
+            />
+            <link rel="canonical" href={`${DOMAIN}/${slugs}`} />
+            <meta property="og:title" content={`${APP_NAME}`} />
+            <meta
+                property="og:description"
+                content={`${mdesc}`}
+            />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content={`${DOMAIN}/${slugs}`} />
+            <meta property="og:site_name" content={`${APP_NAME}`} />
+    
+            <meta property="og:image" content={`${API}/blog/photo/${slugs}`} />
+            <meta property="og:image:secure_url" content={`${API}/blog/photo/${slugs}`} />
+            <meta property="og:image:type" content="image/jpg" />
+        </Head>
+    )
 
     const initBlogData = () => {
         readSingleBlog( slug ).then((data) => {
@@ -157,6 +181,7 @@ const SingleBlog = ({slug}) => {
 
     return (
         <>
+            { head() }
             { errorMsg && errorMsgComponent() }
             <img className="object-fit-100" src={`${API}/blog/photo/${slugs}`} alt=""/>
             <div className="container d-relative">
@@ -178,4 +203,4 @@ const SingleBlog = ({slug}) => {
 
 }
 
-export default SingleBlog;
+export default withRouter(SingleBlog);

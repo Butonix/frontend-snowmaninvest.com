@@ -1,5 +1,4 @@
 import Layout from '../../components/Layout';
-import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import List from '../../components/list';
 import { getBlogList } from '../../actions/blog'

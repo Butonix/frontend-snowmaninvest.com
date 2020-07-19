@@ -4,8 +4,10 @@ import Hero from '../components/home/hero';
 import HomeCard from '../components/home/homeCard';
 import { getBlogList } from '../actions/blog';
 import { useEffect, useState } from 'react';
+import { DOMAIN, APP_NAME } from '../config';
+import { withRouter } from 'next/router';
 
-export default function Home() {
+const Home = ({router}) => {
   
   const [ writterList, setWritterList ] = useState([]);
   const [ heroList, setHeroList ] = useState([]);
@@ -14,6 +16,30 @@ export default function Home() {
   useEffect(() => {
     initWritterBlogList();
   }, [])
+
+  
+  const head = () => (
+    <Head>
+        <title>INVESTOLOGY 雪人投资</title>
+        <meta
+            name="description"
+            content="以文字的力量， 推崇智慧学习的方式， 教育更多人投资理财 以理财为基本，投资为策略，股票外汇知识为工具 达到财务自由!"
+        />
+        <link rel="canonical" href={`${DOMAIN}${router.pathname}`} />
+        <meta property="og:title" content={`${APP_NAME}`} />
+        <meta
+            property="og:description"
+            content="以文字的力量， 推崇智慧学习的方式， 教育更多人投资理财 以理财为基本，投资为策略，股票外汇知识为工具 达到财务自由!"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${DOMAIN}${router.pathname}`} />
+        <meta property="og:site_name" content={`${APP_NAME}`} />
+
+        <meta property="og:image" content="/public/logo.png" />
+        <meta property="og:image:secure_url" content="/public/logo.png" />
+        <meta property="og:image:type" content="image/jpg" />
+    </Head>
+)
 
   const initWritterBlogList = () => {
     let priority = false;
@@ -78,11 +104,16 @@ export default function Home() {
   }
   
   return (
-    <Layout theme={`dark`}>
-       { errorMsg && errorMsgComponent() }
-       <Hero data={heroList}/>
-       <HomeCard data={writterList} title="精选文章"/>
-       <HomeCard data={communityList} title="社区文章"/>
-     </Layout>
+    <>
+      {head()}
+      <Layout theme={`dark`}>
+        { errorMsg && errorMsgComponent() }
+        <Hero data={heroList}/>
+        <HomeCard data={writterList} title="精选文章"/>
+        <HomeCard data={communityList} title="社区文章"/>
+      </Layout>
+    </>
   )
 }
+
+export default withRouter(Home);
