@@ -37,7 +37,7 @@ const SingleBlog = ({slug, router}) => {
     
     const head = () => (
         <Head>
-            <title>{`${title}`}</title>
+            <title>{`${title} | ${APP_NAME}`}</title>
             <meta
                 name="description"
                 content={`${mdesc}`}
