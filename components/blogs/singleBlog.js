@@ -37,7 +37,7 @@ const SingleBlog = ({slug, router}) => {
     
     const head = () => (
         <Head>
-            <title>{`${title}-${APP_NAME}`}</title>
+            <title>{`${title}`}</title>
             <meta
                 name="description"
                 content={`content="以文字的力量， 推崇智慧学习的方式， 教育更多人投资理财 以理财为基本，投资为策略，股票外汇知识为工具 达到财务自由!"`}
@@ -46,7 +46,7 @@ const SingleBlog = ({slug, router}) => {
             <meta property="og:title" content={`${mtitle}`} />
             <meta
                 property="og:description"
-                content={`content="以文字的力量， 推崇智慧学习的方式， 教育更多人投资理财 以理财为基本，投资为策略，股票外汇知识为工具 达到财务自由!"`}
+                content={`以文字的力量， 推崇智慧学习的方式， 教育更多人投资理财 以理财为基本，投资为策略，股票外汇知识为工具 达到财务自由!"`}
             />
             <meta property="og:type" content="website" />
             <meta property="og:url" content={`${DOMAIN}/${slugs}`} />
