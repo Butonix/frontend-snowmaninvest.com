@@ -93,7 +93,7 @@ const CreateBlog = ({username}) => {
                     class:Link,
                     inlineToolbar:true,
                     config: {
-                        endpoint: `${API}/linkUrl`, // Your backend endpoint for url data fetching
+                        endpoint: `https://snowmaninvest.com:8000/api/linkUrl`, // Your backend endpoint for url data fetching
                     }
                 },
                 image: {
@@ -101,8 +101,8 @@ const CreateBlog = ({username}) => {
                     inlineToolbar:true,
                     config: {
                         endpoints: {
-                            byFile: `${API}/uploadFile/temp-${id}`,
-                            byUrl:`${API}/uploadUrl`,
+                            byFile: `https://snowmaninvest.com:8000/api/uploadFile/temp-${id}`,
+                            byUrl:`https://snowmaninvest.com:8000/api/uploadUrl`,
                         }    
                     }
                 },
