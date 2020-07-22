@@ -65,9 +65,6 @@ const CreateBlog = ({username}) => {
                         };
                         setLocalStorage('blog', emptyData)
                     }
-                    
-                    
-                    
                   }).catch((error) => {
                     setValues({...values, error: error})
                   });
@@ -93,7 +90,7 @@ const CreateBlog = ({username}) => {
                     class:Link,
                     inlineToolbar:true,
                     config: {
-                        endpoint: `https://snowmaninvest.com:8000/api/linkUrl`, // Your backend endpoint for url data fetching
+                        endpoint: `${API}/linkUrl`, // Your backend endpoint for url data fetching
                     }
                 },
                 image: {
@@ -101,8 +98,8 @@ const CreateBlog = ({username}) => {
                     inlineToolbar:true,
                     config: {
                         endpoints: {
-                            byFile: `https://snowmaninvest.com:8000/api/uploadFile/temp-${id}`,
-                            byUrl:`https://snowmaninvest.com:8000/api/uploadUrl`,
+                            byFile: `${API}/uploadFile/temp-${id}`,
+                            byUrl:`${API}/uploadUrl`,
                         }    
                     }
                 },
@@ -115,7 +112,7 @@ const CreateBlog = ({username}) => {
                     inlineToolbar:true
                 }
             },
-            logLevel:'VERBOSE'
+            logLevel:'WARN'
             });
     }
 
