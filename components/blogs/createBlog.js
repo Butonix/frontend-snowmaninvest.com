@@ -54,8 +54,20 @@ const CreateBlog = ({username}) => {
             onChange: () => { 
                 editor.save().then((outputData) => {
                     let oldData = JSON.parse(localStorage.getItem('blog'));
-                    oldData.blog = outputData
-                    setLocalStorage('blog', oldData)
+                    if(oldData) {
+                        oldData.title = "";
+                        oldData.blog = outputData;
+                        setLocalStorage('blog', oldData)
+                    }else{
+                        let emptyData = {
+                            title: title,
+                            blog : outputData
+                        };
+                        setLocalStorage('blog', emptyData)
+                    }
+                    
+                    
+                    
                   }).catch((error) => {
                     setValues({...values, error: error})
                   });
