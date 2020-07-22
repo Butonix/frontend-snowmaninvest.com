@@ -115,7 +115,7 @@ const CreateBlog = ({username}) => {
                     inlineToolbar:true
                 }
             },
-            logLevel:'WARN'
+            logLevel:'VERBOSE'
             });
     }
 
