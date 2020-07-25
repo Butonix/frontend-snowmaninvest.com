@@ -1,4 +1,5 @@
 nav {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
@@ -16,6 +17,7 @@ nav {
   max-height: 15rem;
   box-shadow: 0px 0px 2px #535353;
   display: none;
+  grid-auto-columns: -webkit-max-content;
   grid-auto-columns: max-content;
   grid-auto-flow: column;
   grid-gap: 0.25rem;
@@ -365,7 +367,8 @@ nav {
   cursor: pointer;
 }
 .carousel-item:hover img, .carousel-item:focus img, .carousel-item:active img {
-  filter: brightness(40%);
+  -webkit-filter: brightness(40%);
+          filter: brightness(40%);
 }
 .carousel-item:hover .title {
   text-shadow: 0px 0px 10px black;
@@ -382,9 +385,11 @@ nav {
   transition: all ease 0.25s;
 }
 .carousel-item img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 100%;
-  filter: brightness(60%);
+  -webkit-filter: brightness(60%);
+          filter: brightness(60%);
   transition: all 0.75s ease;
 }
 
@@ -410,8 +415,10 @@ nav {
   cursor: pointer;
 }
 .heroDesktop .heroDesktop__item:hover img {
-  filter: brightness(20%);
-  object-position: right;
+  -webkit-filter: brightness(20%);
+          filter: brightness(20%);
+  -o-object-position: right;
+     object-position: right;
 }
 .heroDesktop .heroDesktop__item:hover .fas {
   visibility: visible !important;
@@ -421,11 +428,14 @@ nav {
   text-shadow: 0px 0px 10px black;
 }
 .heroDesktop .heroDesktop__item img {
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   height: 100%;
   width: 100%;
-  filter: brightness(70%);
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
   transition: all ease 0.5s;
 }
 .heroDesktop .heroDesktop__item .heroDesktop__details {
@@ -481,7 +491,8 @@ nav {
   margin-bottom: 1rem;
 }
 .homeCard .homeCard-Big .homeCard-Big_item:hover img {
-  filter: brightness(30%);
+  -webkit-filter: brightness(30%);
+          filter: brightness(30%);
   transition: 0.5s ease all;
 }
 .homeCard .homeCard-Big .homeCard-Big_item:hover .fas {
@@ -504,8 +515,10 @@ nav {
   font-size: 0.65em;
 }
 .homeCard .homeCard-Big .homeCard-Big_item img {
-  filter: brightness(70%);
-  object-fit: cover;
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -550,7 +563,8 @@ nav {
   margin-right: 1rem;
 }
 .homeCard .homeCard-Small .homeCard-Small__item .image img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   min-height: 6rem;
   min-width: 6rem;
 }
@@ -726,7 +740,8 @@ nav {
 .list .card-contatiner {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  column-gap: 2rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
   align-items: center;
   row-gap: 2rem;
   align-items: start;
@@ -750,7 +765,8 @@ nav {
 .list .card-contatiner .cards .image {
   width: 100%;
   height: 8rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 0.25rem 0.25rem 0rem 0rem;
 }
 .list .card-contatiner .cards .card-content {
@@ -773,10 +789,12 @@ nav {
 }
 
 .object-fit-100 {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100% !important;
   height: 28rem !important;
-  object-position: center;
+  -o-object-position: center;
+     object-position: center;
 }
 
 #article {
@@ -1072,5 +1090,3 @@ p {
   box-shadow: 0px 0px 10px 0px #696969;
   cursor: pointer;
 }
-
-/*# sourceMappingURL=global.css.map */
