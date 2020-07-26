@@ -80,7 +80,6 @@ export const updateBlogAction = ( blog, token, slug ) => {
 }
 
 export const listSearch = params => {
-    console.log('search params', params);
     let query = queryString.stringify(params);
     console.log('query params', query);
     return fetch(`${API}/blogs/search?${query}`, {
@@ -91,3 +90,15 @@ export const listSearch = params => {
         })
         .catch(err => console.log(err));
 };
+
+export const resetTempImage = ( token ) => {
+    return fetch(`${API}/resetImage`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`
+        }
+    }).then( response => {
+        return response.json();
+    })
+}

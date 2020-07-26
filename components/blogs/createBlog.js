@@ -9,7 +9,7 @@ import CheckList from '@editorjs/checklist';
 import Quote from '@editorjs/quote';
 
 import { useEffect, useState } from 'react';
-import { createBlog } from '../../actions/blog';
+import { createBlog, resetTempImage } from '../../actions/blog';
 import { getCategories, publishCategory, deleteCategory, updateCategory } from '../../actions/category';
 import { API } from '../../config'
 import { setLocalStorage, removeLocalStorage,getLocalStorage, getCookie, isAuth } from '../../actions/auth';
@@ -55,7 +55,7 @@ const CreateBlog = ({username}) => {
                 editor.save().then((outputData) => {
                     let oldData = JSON.parse(localStorage.getItem('blog'));
                     if(oldData) {
-                        oldData.title = "";
+                        oldData.title = title;
                         oldData.blog = outputData;
                         setLocalStorage('blog', oldData)
                     }else{
@@ -259,8 +259,13 @@ const CreateBlog = ({username}) => {
     )
 
     const reset = () => {
-        removeLocalStorage('blog')
+        removeLocalStorage('blog');
         router.reload();
+        resetTempImage(token).then(outputData => {
+            if( outputData == undefined) {
+                setErrorMsg(true);
+            }
+        })
     }
     
     const handleChangeTitle = e => {
