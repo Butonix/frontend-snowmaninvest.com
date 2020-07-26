@@ -13,7 +13,8 @@ import { createBlog, resetTempImage } from '../../actions/blog';
 import { getCategories, publishCategory, deleteCategory, updateCategory } from '../../actions/category';
 import { API } from '../../config'
 import { setLocalStorage, removeLocalStorage,getLocalStorage, getCookie, isAuth } from '../../actions/auth';
-import router from 'next/router'
+import router from 'next/router';
+import imageCompression from 'browser-image-compression';
 
 let blogCreated = 0;
 let editor = {};
@@ -138,9 +139,20 @@ const CreateBlog = ({username}) => {
         if(URL.createObjectURL(e.target.files[0])){
             setImgPreviewUrl( URL.createObjectURL(e.target.files[0]) )   
         }
+        let imageFile = e.target.files[0];
+        let options = {
+            maxSizeMB: 1,
+            maxWidthOrHeight: 1920,
+            useWebWorker: true
+        }
 
-        formData.set('photo', e.target.files[0]);
-        setValues({...values, formData, error:""})
+        imageCompression(imageFile, options).then(function (compressedFile) {
+            formData.set('photo', compressedFile);
+            setValues({...values, formData, error:""})
+          })
+          .catch(function (error) {
+            console.log(error.message);
+        });
     }
 
     // Component - Categories
